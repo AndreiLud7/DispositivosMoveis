@@ -27,9 +27,10 @@ public class MainActivity extends AppCompatActivity {
     public void NumeroAleatorio(View V){
         int max, min;
         min = Integer.parseInt(edmin.getText().toString());
-        max = Integer.parseInt(edmin.getText().toString());
-        Random R = new Random;
-        R.nextInt( bound max - min+1);
+        max = Integer.parseInt(edMax.getText().toString());
+        Random R = new Random();
+        int resultado = R.nextInt(max - min + 1)+min;
+        textviewResult.setText(Integer.toString(resultado));
 
     }
 

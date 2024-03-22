@@ -20,15 +20,28 @@ public class MainActivity extends AppCompatActivity {
         edaltura = findViewById(R.id.altura);
     }
     public void calcularIMC(View view){
+        Intent i = new Intent(this, Resultado.class);
 
-        double peso = Double.parseDouble(edpeso.getText().toString());
-        double altura = Double.parseDouble(edaltura.getText().toString());
-        String IMC = String.valueOf(peso/(altura*2));
-        Log.d(IMC, "calcularIMC: ");
-        Toast.makeText(this, IMC, Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(getApplicationContext(),Resultado.class);
-        intent.putExtra("valorimc",IMC);
-        startActivity(intent);
+        Bundle ebundle = new Bundle();
+
+        ebundle.putFloat("peso", Float.parseFloat(edpeso.getText().toString()));
+        ebundle.putFloat("altura", Float.parseFloat(edaltura.getText().toString()));
+       // ebundle.putFloat("valorimc", Float.parseFloat(edpeso.getText().toString())/(Float.parseFloat(edaltura.getText().toString())*2));
+        i.putExtras(ebundle);
+
+        startActivity(i);
+
+
+        //double peso = Double.parseDouble(edpeso.getText().toString());
+      //  double altura = Double.parseDouble(edaltura.getText().toString());
+       // String IMC = String.valueOf(peso/(altura*2));
+
+       // Toast.makeText(this, "Resultado: "+IMC, Toast.LENGTH_SHORT).show();
+       // Log.d(IMC, "calcularIMC: ");
+
+      //  Intent intent = new Intent(this, Resultado.class);
+       // intent.putExtra("valorimc",IMC);
+       // startActivity(intent);
 
 
     }

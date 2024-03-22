@@ -4,18 +4,32 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.widget.TextView;
 
 public class Resultado extends AppCompatActivity {
-
+    TextView tvaltura, tvpeso, tvimc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultado);
 
-        Intent i = getIntent();
-        Bundle bundle = i.getExtras();
-        bundle.getString("valorimc");
-        Log.d(TAG: "Valor do IMC:", bundle.getString( "valorimc"));
+        tvaltura = findViewById(R.id.ResultadoAltura);
+        tvpeso = findViewById(R.id.Resultadopeso);
+        tvimc = findViewById(R.id.ResultadoIMC);
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+
+        Float peso, altura, imc;
+        peso = bundle.getFloat("peso");
+        altura = bundle.getFloat("altura");
+        imc = bundle.getFloat("imc");
+        imc = peso / (altura * altura);
+
+        tvaltura.setText(altura.toString());
+        tvpeso.setText(peso.toString());
+        tvimc.setText(imc.toString());
+
+
     }
 }

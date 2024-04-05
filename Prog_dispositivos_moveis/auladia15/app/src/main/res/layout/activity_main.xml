@@ -63,4 +63,10 @@
         android:onClick="calcularIMC"
         android:text="Button" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/perfil" />
+
 </LinearLayout>

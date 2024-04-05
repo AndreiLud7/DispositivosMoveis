@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="Refazer"
     tools:context=".Resultado">
 
     <TextView
@@ -23,7 +24,7 @@
         android:layout_marginTop="76dp"
         android:text="Peso"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/IndicadorR" />
 
     <TextView
         android:id="@+id/textView6"
@@ -49,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:text="Altura"
+        android:text="IMC"
         app:layout_constraintStart_toEndOf="@+id/textView9"
         app:layout_constraintTop_toTopOf="@+id/textView9" />
 
@@ -59,19 +60,42 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="28dp"
-        android:text="Altura"
+        android:text="IMC"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/IndicadorR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:text="ResultadoImc"
+        android:layout_marginTop="304dp"
+        android:text="IMC"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="337dp"
+        android:layout_height="264dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/IndicadorR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/perfil" />
+
+    <Button
+        android:id="@+id/Bvoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="Refazer"
+        android:text="Refazer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ResultadoIMC" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
